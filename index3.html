@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #4e1717;
+        text-align: center;
+    }
+
+    h1 {
+        color: #ffffff;
+    }
+
+    form {
+        margin: 20px auto;
+        max-width: 400px;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    input[type="text"] {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    button[type="submit"] {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        background-color: #39e629;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    button[type="submit"]:hover {
+        background-color: #55a538;
+    }
+
+    #result {
+        margin: 20px auto;
+        max-width: 400px;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    p {
+        margin: 0;
+        padding: 5px;
+    }
+</style>
+
+<body>
+    <h1>Enter words to sorted those in order of words</h1>
+    <form onsubmit="return sortWords()">
+        <input type="text" id="user_input" required />
+        <button type="submit">Submit</button>
+    </form>
+    <div id="result"></div>
+
+    <script>
+        function sortWords() {
+            const inputElement = document.getElementById("user_input").value;
+            const words = inputElement.split(" ").map(word => word.toLowerCase());
+
+            words.sort();
+
+            const resultDiv = document.getElementById("result");
+            resultDiv.innerHTML = "<p>The sorted words are:</p>";
+
+            for (const word of words) {
+                resultDiv.innerHTML += "<p>" + word + "</p>";
+            }
+
+            return false;
+        }
+    </script>
+
+
+</body>
+</html>

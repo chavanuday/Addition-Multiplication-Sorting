@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Multiply</title>
+    <style>
+        /* Reset some default styles and set a light background */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #755353;
+        }
+
+        /* Center the content vertically and horizontally */
+        html,
+        body {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Style the header */
+        h1 {
+            font-size: 24px;
+            color: #efeaea;
+            
+        }
+
+        /* Style the form */
+        form {
+            text-align: center;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Style the input and button */
+        input[type="text"] {
+            padding: 8px;
+            width: 100px;
+        }
+
+        button[type="submit"] {
+            padding: 8px 16px;
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 45px;
+        }
+
+        /* Style the result div */
+        .res {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <h1>Table of Multiplication</h1> <br />
+    <form onsubmit="return adds()"> Enter a number <input type="textbox" name="num1" id="num1" required /><br /><br>
+        Range<input type="number" placeholder="" id="num2" ><br>
+        <button type="submit" name="Submit">Submit</button>
+        <div class="res" id="res"></div>
+    </form>
+    <script>
+        function adds() {
+            let a = document.getElementById("num1").value;
+            var b = document.getElementById("num2").value;
+            let table = "";
+            for (let i = 1; i <= b; i++) {
+                table = table + a + " * " + i + " = " + a * i + "<br>";
+            }
+            document.getElementById("res").innerHTML = table;
+            return false;
+        }
+    </script>
+</body>
+</html>

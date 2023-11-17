@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #7a6565;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        .main-container {
+            background-color: #413d3d;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            padding: 60px;
+            width: 400px;
+            margin: 100px auto;
+        }
+
+        h1 {
+            color: #f0ecec;
+        }
+
+        .num-box {
+            text-align: left;
+            padding: 10px;
+            color: white;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        #result {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+    </style>
+
+
+    <div class="main-container">
+        <h1>Addition of Two Numbers</h1>
+        <div class="num-box"> <br />
+            1<sup>st</sup> Number
+            <input type="text" name="num1" id="num1" /><br />
+            2<sup>nd</sup> Number
+            <input type="text" name="num2" id="num2" /><br />
+            <button type="button" name="Submit" onclick="adds()">Submit</button>
+
+        </div>
+        <input id="result" readonly></input>
+        <span id="error"></span>
+    </div>
+    <script>
+        function adds() {
+            debugger
+            var a = parseInt(document.getElementById("num1").value);
+            var b = parseInt(document.getElementById("num2").value);
+            if (!isNaN(a) && !isNaN(b)) {
+                var sum = a + b;
+
+                document.getElementById("result").value = sum;
+            }
+            else {
+                document.getElementById('error').innerHTML = 'This is an error';
+            }
+
+
+        }
+    </script>
+
+
+</body>
+
+</html>
